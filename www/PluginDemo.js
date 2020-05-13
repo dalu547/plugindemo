@@ -339,6 +339,7 @@ module.exports = {
     },
     coolMethod: (arg0, successCallback, errorCallback) => {
         exec(successCallback, errorCallback, 'PluginDemo', 'coolMethod', [arg0]);
+        
     },
 
     /**

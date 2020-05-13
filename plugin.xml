@@ -16,7 +16,7 @@
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml" />
-        <source-file src="src/android/PluginDemo.java" target-dir="src/cordova/plugin/plugindemo/PluginDemo" />
+        <source-file src="src/android/PluginDemo.java" target-dir="src/cordova/plugin/plugindemo/PluginDemo"/>
         
     </platform>
 
