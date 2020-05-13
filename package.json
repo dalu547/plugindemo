@@ -1,0 +1,42 @@
+{
+  "_from": "git+https://github.com/durga0303/PluginDemo.git",
+  "_id": "cordova-plugin-plugindemo@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-plugindemo",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/durga0303/PluginDemo.git",
+    "rawSpec": "https://github.com/durga0303/PluginDemo.git",
+    "saveSpec": "git+https://github.com/durga0303/PluginDemo.git",
+    "fetchSpec": "https://github.com/durga0303/PluginDemo.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/durga0303/PluginDemo.git#aa38efbebbe049d572b7109f8dd89176e1471b5d",
+  "_spec": "https://github.com/durga0303/PluginDemo.git",
+  "_where": "/Users/durga.vundavalli/Desktop/Medium/IonicPluginDemo",
+  "author": {
+    "name": "Durga Vundavalli"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-plugindemo",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "PluginDemo",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "license": "ISC",
+  "name": "cordova-plugin-plugindemo",
+  "version": "1.0.0"
+}
