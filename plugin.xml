@@ -6,6 +6,20 @@
 	<js-module name="PluginDemo" src="www/PluginDemo.js">
 		<clobbers target="PluginDemo"/>
 	</js-module>
+
+     <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PluginDemo">
+                <param name="android-package" value="cordova.plugin.plugindemo.PluginDemo"/>
+                <param name="onload" value="true" />
+
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/PluginDemo.java" target-dir="src/cordova/plugin/plugindemo/PluginDemo" />
+        
+    </platform>
+
 	<platform name="ios">
 		<config-file parent="/*" target="config.xml">
 			<feature name="PluginDemo">
