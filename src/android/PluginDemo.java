@@ -3,6 +3,7 @@ package cordova.plugin.plugindemo;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,21 +18,23 @@ import android.util.Log;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class FCMPlugin extends CordovaPlugin {
+public class PluginDemo extends CordovaPlugin {
 
     private Timer mTimer;
     private TimerTask mTt;
     private Handler mTimerHandler = new Handler();
     private CallbackContext gCallbackContext;
     private String callbackId;
+    private String TAG = "FCMPlugin";
 
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if(){
-
+        if(action.equals("init")){
+            this.init(callbackContext);
+            return true;
         }
-        if (action.equals("coolMethod")) {
+        else if (action.equals("coolMethod")) {
             String message = args.getString(0);
             // this.coolMethod(message, callbackContext);
             this.startTimer(message, callbackContext);
@@ -49,6 +52,8 @@ public class FCMPlugin extends CordovaPlugin {
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
+        Log.d(TAG,"coolMethod");
+
         if (message != null && message.length() > 0) {
             callbackContext.success(message);
         } else {
@@ -57,14 +62,19 @@ public class FCMPlugin extends CordovaPlugin {
     }
 
     private void init(CallbackContext callbackContext){
-        
+        Log.d(TAG,"init");
+
         gCallbackContext = callbackContext;
         callbackId = callbackContext.getCallbackId();
     }
 
     private void initRegistration(){
 
-
+        Log.d(TAG,"initRegistration");
+        PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, "Update message to component");
+        pluginResult.setKeepCallback(true);
+        gCallbackContext.sendPluginResult(pluginResult);
+//      gCallbackContext.success("Update message to component");
 
     }
 
@@ -84,14 +94,14 @@ public class FCMPlugin extends CordovaPlugin {
                         Log.d("Timer","Timer tiggered");
                         
                         //Plugin result prepare and send.
-                        gCallbackContext.success("Update message to component");
-                        
+                        initRegistration();
+
                     }
                 });
             }
         };
 
-        mTimer.schedule(mTt, 1, 5000);
+        mTimer.schedule(mTt, 1, 1*30*1000);
     }
-        
+
 }
