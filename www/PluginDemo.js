@@ -135,74 +135,74 @@ class PluginDemo {
     /**
      * Call this to set the application icon badge
      */
-    setApplicationIconBadgeNumber(successCallback, errorCallback = () => { }, badge) {
-        if (typeof errorCallback !== 'function') {
-            console.log(
-                'PluginDemo.setApplicationIconBadgeNumber failure: failure '
-                + 'parameter not a function',
-            );
-            return;
-        }
+    // setApplicationIconBadgeNumber(successCallback, errorCallback = () => { }, badge) {
+    //     if (typeof errorCallback !== 'function') {
+    //         console.log(
+    //             'PluginDemo.setApplicationIconBadgeNumber failure: failure '
+    //             + 'parameter not a function',
+    //         );
+    //         return;
+    //     }
 
-        if (typeof successCallback !== 'function') {
-            console.log(
-                'PluginDemo.setApplicationIconBadgeNumber failure: success '
-                + 'callback parameter must be a function',
-            );
-            return;
-        }
+    //     if (typeof successCallback !== 'function') {
+    //         console.log(
+    //             'PluginDemo.setApplicationIconBadgeNumber failure: success '
+    //             + 'callback parameter must be a function',
+    //         );
+    //         return;
+    //     }
 
-        exec(successCallback, errorCallback, 'PluginDemo', 'setApplicationIconBadgeNumber', [
-            { badge },
-        ]);
-    }
+    //     exec(successCallback, errorCallback, 'PluginDemo', 'setApplicationIconBadgeNumber', [
+    //         { badge },
+    //     ]);
+    // }
 
     /**
      * Get the application icon badge
      */
 
-    getApplicationIconBadgeNumber(successCallback, errorCallback = () => { }) {
-        if (typeof errorCallback !== 'function') {
-            console.log(
-                'PluginDemo.getApplicationIconBadgeNumber failure: failure '
-                + 'parameter not a function',
-            );
-            return;
-        }
+    // getApplicationIconBadgeNumber(successCallback, errorCallback = () => { }) {
+    //     if (typeof errorCallback !== 'function') {
+    //         console.log(
+    //             'PluginDemo.getApplicationIconBadgeNumber failure: failure '
+    //             + 'parameter not a function',
+    //         );
+    //         return;
+    //     }
 
-        if (typeof successCallback !== 'function') {
-            console.log(
-                'PluginDemo.getApplicationIconBadgeNumber failure: success '
-                + 'callback parameter must be a function',
-            );
-            return;
-        }
+    //     if (typeof successCallback !== 'function') {
+    //         console.log(
+    //             'PluginDemo.getApplicationIconBadgeNumber failure: success '
+    //             + 'callback parameter must be a function',
+    //         );
+    //         return;
+    //     }
 
-        exec(successCallback, errorCallback, 'PluginDemo', 'getApplicationIconBadgeNumber', []);
-    }
+    //     exec(successCallback, errorCallback, 'PluginDemo', 'getApplicationIconBadgeNumber', []);
+    // }
 
     /**
      * Clear all notifications
      */
 
-    clearAllNotifications(successCallback = () => { }, errorCallback = () => { }) {
-        if (typeof errorCallback !== 'function') {
-            console.log(
-                'PluginDemo.clearAllNotifications failure: failure parameter not a function',
-            );
-            return;
-        }
+    // clearAllNotifications(successCallback = () => { }, errorCallback = () => { }) {
+    //     if (typeof errorCallback !== 'function') {
+    //         console.log(
+    //             'PluginDemo.clearAllNotifications failure: failure parameter not a function',
+    //         );
+    //         return;
+    //     }
 
-        if (typeof successCallback !== 'function') {
-            console.log(
-                'PluginDemo.clearAllNotifications failure: success callback '
-                + 'parameter must be a function',
-            );
-            return;
-        }
+    //     if (typeof successCallback !== 'function') {
+    //         console.log(
+    //             'PluginDemo.clearAllNotifications failure: success callback '
+    //             + 'parameter must be a function',
+    //         );
+    //         return;
+    //     }
 
-        exec(successCallback, errorCallback, 'PluginDemo', 'clearAllNotifications', []);
-    }
+    //     exec(successCallback, errorCallback, 'PluginDemo', 'clearAllNotifications', []);
+    // }
 
     /**
      * Clears notifications that have the ID specified.
@@ -210,19 +210,19 @@ class PluginDemo {
      * @param  {Function} [errorCallback] Callback function to be called when an error is encountered.
      * @param  {Number} id    ID of the notification to be removed.
      */
-    clearNotification(successCallback = () => { }, errorCallback = () => { }, id) {
-        const idNumber = parseInt(id, 10);
-        if (Number.isNaN(idNumber) || idNumber > Number.MAX_SAFE_INTEGER || idNumber < 0) {
-            console.log(
-                'PluginDemo.clearNotification failure: id parameter must'
-                + 'be a valid integer.',
-            );
-            return;
-        }
+    // clearNotification(successCallback = () => { }, errorCallback = () => { }, id) {
+    //     const idNumber = parseInt(id, 10);
+    //     if (Number.isNaN(idNumber) || idNumber > Number.MAX_SAFE_INTEGER || idNumber < 0) {
+    //         console.log(
+    //             'PluginDemo.clearNotification failure: id parameter must'
+    //             + 'be a valid integer.',
+    //         );
+    //         return;
+    //     }
 
-        exec(successCallback, errorCallback, 'PluginDemo', 'clearNotification',
-            [idNumber]);
-    }
+    //     exec(successCallback, errorCallback, 'PluginDemo', 'clearNotification',
+    //         [idNumber]);
+    // }
 
     /**
      * Listen for an event.
@@ -322,21 +322,21 @@ module.exports = {
 
     init: (options) => new PluginDemo(options),
 
-    hasPermission: (successCallback, errorCallback) => {
-        exec(successCallback, errorCallback, 'PluginDemo', 'hasPermission', []);
-    },
+    // hasPermission: (successCallback, errorCallback) => {
+    //     exec(successCallback, errorCallback, 'PluginDemo', 'hasPermission', []);
+    // },
 
-    createChannel: (successCallback, errorCallback, channel) => {
-        exec(successCallback, errorCallback, 'PluginDemo', 'createChannel', [channel]);
-    },
+    // createChannel: (successCallback, errorCallback, channel) => {
+    //     exec(successCallback, errorCallback, 'PluginDemo', 'createChannel', [channel]);
+    // },
 
-    deleteChannel: (successCallback, errorCallback, channelId) => {
-        exec(successCallback, errorCallback, 'PluginDemo', 'deleteChannel', [channelId]);
-    },
+    // deleteChannel: (successCallback, errorCallback, channelId) => {
+    //     exec(successCallback, errorCallback, 'PluginDemo', 'deleteChannel', [channelId]);
+    // },
 
-    listChannels: (successCallback, errorCallback) => {
-        exec(successCallback, errorCallback, 'PluginDemo', 'listChannels', []);
-    },
+    // listChannels: (successCallback, errorCallback) => {
+    //     exec(successCallback, errorCallback, 'PluginDemo', 'listChannels', []);
+    // },
     coolMethod: (arg0, successCallback, errorCallback) => {
         exec(successCallback, errorCallback, 'PluginDemo', 'coolMethod', [arg0]);
         
