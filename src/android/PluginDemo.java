@@ -25,7 +25,7 @@ public class PluginDemo extends CordovaPlugin {
     private Handler mTimerHandler = new Handler();
     private CallbackContext gCallbackContext;
     private String callbackId;
-    private String TAG = "FCMPlugin";
+    private String TAG = "PluginDemo";
 
 
     @Override
