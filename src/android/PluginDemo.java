@@ -23,7 +23,7 @@ public class PluginDemo extends CordovaPlugin {
     private Timer mTimer;
     private TimerTask mTt;
     private Handler mTimerHandler = new Handler();
-    private CallbackContext gCallbackContext;
+    private CallbackContext gCallbackContext,gCallbackContext2;
     private String callbackId;
     private String TAG = "PluginDemo";
 
@@ -68,12 +68,21 @@ public class PluginDemo extends CordovaPlugin {
         callbackId = callbackContext.getCallbackId();
     }
 
+    private void initOtherEvent(CallbackContext callbackContext){
+        Log.d(TAG,"initOtherEvent");
+
+        gCallbackContext2 = callbackContext;
+        callbackId = callbackContext.getCallbackId();
+    }
+
+    
     private void initRegistration(){
 
         Log.d(TAG,"initRegistration");
         PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, "Update message to component");
         pluginResult.setKeepCallback(true);
         gCallbackContext.sendPluginResult(pluginResult);
+        gCallbackContext2.sendPluginResult(pluginResult);
 //      gCallbackContext.success("Update message to component");
 
     }
